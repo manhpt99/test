@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import Menu from './MenuComponent';
-import { DishdetailComponent } from './DishdetailComponent';
+import DishDetail, { DishdetailComponent } from './DishdetailComponent';
 import { DISHES } from '../shared/dishes';
 
 class MainComponents extends Component {
@@ -27,7 +27,7 @@ class MainComponents extends Component {
           </div>
         </Navbar>
         <Menu dishes={this.state.dishes} onClick={(dishId) => this.onDishSelect(dishId)} />
-        <DishdetailComponent dish={this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]} />
+        <DishDetail dish={this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]} />
       </div>
     );
   }

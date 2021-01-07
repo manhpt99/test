@@ -1,19 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {
     Card, CardImg, CardImgOverlay, CardText, CardBody,
     CardTitle
 } from 'reactstrap';
 import moment from 'moment';
 
-export class DishdetailComponent extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-
-        };
-    }
-
-    renderDish(dish) {
+    function RenderDish(dish) {
         if (dish != null)
             return (
                 <Card>
@@ -30,12 +22,12 @@ export class DishdetailComponent extends Component {
             );
     }
 
-    renderComments(dish){
-        if (dish != null)
+   function RenderComments(comments){
+        if (comments != null)
             return(
                 <div >
                     <ul className = "list-unstyled">
-                        {dish.comments.map(comment =>
+                        {comments.map(comment =>
                             <div >
                                 <li>
                                     {comment.comment}
@@ -56,27 +48,26 @@ export class DishdetailComponent extends Component {
             );
     }
 
-    render() {
-        if (this.props.dish != null)
+   const DishDetail = (props) => {
+        if(props.dish != null)
             return (
                 <div class="container">
                     <div className="row">
                         <div className="col-12 col-md-5 m-1">
-                            {this.renderDish(this.props.dish)}
+                            {RenderDish(props.dish)}
                         </div>
                         <div className="col-12 col-md-5 m-1">
                             <h4>Comments</h4>
-                            {this.renderComments(this.props.dish)}
+                            {RenderComments(props.dish.comments)}
                         </div>
                     </div>
                 </div>
             )
-        else
+        else 
             return (
-                <div></div>
-            );
-
+                <div class="container"></div>
+            )
     };
-}
 
-export default DishdetailComponent
+
+export default DishDetail
