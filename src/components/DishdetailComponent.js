@@ -57,16 +57,16 @@ export class DishdetailComponent extends Component {
     }
 
     render() {
-        if (this.props.selectedDish != null)
+        if (this.props.dish != null)
             return (
-                <div>
+                <div class="container">
                     <div className="row">
                         <div className="col-12 col-md-5 m-1">
-                            {this.renderDish(this.props.selectedDish)}
+                            {this.renderDish(this.props.dish)}
                         </div>
                         <div className="col-12 col-md-5 m-1">
                             <h4>Comments</h4>
-                            {this.renderComments(this.props.selectedDish)}
+                            {this.renderComments(this.props.dish)}
                         </div>
                     </div>
                 </div>
