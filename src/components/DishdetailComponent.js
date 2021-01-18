@@ -5,6 +5,7 @@ import {
     Button, Modal, ModalHeader, ModalBody,
     Label, Row, Col
 } from 'reactstrap';
+import { baseUrl } from '../shared/baseUrl';
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import moment from 'moment';
@@ -15,7 +16,7 @@ function RenderDish({dish}) {
     if (dish != null)
         return (
             <Card>
-                <CardImg top src={dish.image} alt={dish.name} />
+                <CardImg top src={baseUrl + dish.image} alt={dish.name} />
                 <CardBody>
                     <CardTitle>{dish.name}</CardTitle>
                     <CardText>{dish.description}</CardText>
