@@ -1,17 +1,17 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
-
+import { baseUrl } from '../shared/baseUrl';
 function About(props) {
 
-    const leaders = props.leaders.map((leader) => {
+    const leaders = props.leaders.leaders.map((leader) => {
         return (
             <div className='mt-3'>
                 <Media tag="li" >
                     <Media left top href="#" className='mr-5'>
                         <Media
                             object
-                            src={leader.image}
+                            src={baseUrl + leader.image}
                             alt="leader image"
                         />
                     </Media>
